@@ -82,21 +82,23 @@ function TaskCard({
 
         {/* Actions */}
         <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
-          <button
-            onClick={(e) => { e.stopPropagation(); onEdit(task) }}
-            className="w-7 h-7 rounded-lg hover:bg-azure-50 text-slate-400 hover:text-azure-600 flex items-center justify-center transition-all"
-          >
-            <Edit3 size={13} />
-          </button>
-          {isAdmin && (
-            <button
-              onClick={(e) => { e.stopPropagation(); onDelete(task.id) }}
-              className="w-7 h-7 rounded-lg hover:bg-red-50 text-slate-400 hover:text-red-500 flex items-center justify-center transition-all"
-            >
-              <Trash2 size={13} />
-            </button>
-          )}
-        </div>
+  {isAdmin && (
+    <button
+      onClick={(e) => { e.stopPropagation(); onEdit(task) }}
+      className="w-7 h-7 rounded-lg hover:bg-azure-50 text-slate-400 hover:text-azure-600 flex items-center justify-center transition-all"
+    >
+      <Edit3 size={13} />
+    </button>
+  )}
+  {isAdmin && (
+    <button
+      onClick={(e) => { e.stopPropagation(); onDelete(task.id) }}
+      className="w-7 h-7 rounded-lg hover:bg-red-50 text-slate-400 hover:text-red-500 flex items-center justify-center transition-all"
+    >
+      <Trash2 size={13} />
+    </button>
+  )}
+</div>
       </div>
 
       {/* Description */}
